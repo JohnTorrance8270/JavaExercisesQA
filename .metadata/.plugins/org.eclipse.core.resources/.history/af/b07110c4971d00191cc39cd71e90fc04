@@ -1,0 +1,75 @@
+
+public class Calculator 
+{
+	private static float performSimpleCalculation(String operatorChosen, float firstNumber, float secondNumber)
+	{
+		Calculator calc = new Calculator();
+		switch(operatorChosen)
+		{
+			case "+":
+				return calc.add(firstNumber, secondNumber);
+			case "-":
+				return calc.subtract(firstNumber, secondNumber);	
+			case "*":
+				return calc.multiply(firstNumber, secondNumber);
+			case "/":
+				return calc.divide(firstNumber, secondNumber);
+			case "%":
+				return calc.remainder(firstNumber, secondNumber);
+			default:
+				System.out.println("Please Enter A Valid Operator - Error");	
+		}
+		
+		return 0;
+	}
+	
+	public static int add(int firstNumber, int secondNumber) 
+	{
+		return firstNumber + secondNumber;
+	}
+	
+	public int subtract(int firstNumber, int secondNumber) 
+	{
+		return firstNumber - secondNumber;
+	}
+	
+	public int divide(int firstNumber, int secondNumber) 
+	{
+		return firstNumber / secondNumber;
+	}
+	
+	public int multiply(int firstNumber, int secondNumber) 
+	{
+		return firstNumber * secondNumber;
+	}
+	
+	public int remainder(int firstNumber, int secondNumber) 
+	{
+		return firstNumber % secondNumber;
+	}
+	
+	public static float add(float firstNumber, float secondNumber) 
+	{
+		return firstNumber + secondNumber;
+	}
+	
+	public float subtract(float firstNumber, float secondNumber) 
+	{
+		return firstNumber - secondNumber;
+	}
+	
+	public float divide(float firstNumber, float secondNumber) 
+	{
+		return firstNumber / secondNumber;
+	}
+	
+	public float multiply(float firstNumber, float secondNumber) 
+	{
+		return firstNumber * secondNumber;
+	}
+	
+	public float remainder(float firstNumber, float secondNumber) 
+	{
+		return firstNumber % secondNumber;
+	}
+}

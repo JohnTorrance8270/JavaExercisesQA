@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class InputController 
+{
+	Scanner input;
+	
+	InputController(){input  = new Scanner(System.in);}
+		
+	public float numericInputController()
+	{
+		System.out.println("Please Enter A Number: ");
+		float numberEntered = 0;
+		
+		//anything input?
+		if(input.hasNext())
+		{
+			if(input.hasNextInt())
+			{
+				numberEntered = input.nextInt();
+			}
+			else if (input.hasNextFloat())
+			{
+				numberEntered = input.nextFloat();
+			}
+			else
+			{
+				System.out.println("Please Enter A Number Only, Try Again");
+				return numericInputController();
+			}
+		}
+		
+		System.out.println("The Number Entered was: " + numberEntered);
+	
+		return numberEntered;
+	}
+	
+	public String operatorInputController()
+	{
+		System.out.println("Please Enter An Operator: ");
+		String operatorEntered = "";
+		
+		//anything input?
+		if(input.hasNext())
+		{
+			operatorEntered = input.next();
+			if(operatorEntered.equals("+") || operatorEntered.equals("/") || operatorEntered.equals("*") || operatorEntered.equals("-") || operatorEntered.equals("%"))
+			{
+				operatorEntered = input.nextLine();
+			}
+			else 
+			{
+				
+			}
+		}
+		
+		System.out.println("The Number Entered was: " + operatorEntered);
+		return operatorEntered;
+	}
+	
+	
+	public void closeReader()
+	{
+		input.close();
+	}
+}

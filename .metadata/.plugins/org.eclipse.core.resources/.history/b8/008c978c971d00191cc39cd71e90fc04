@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{	
+		InputController inputController;
+		inputController = new InputController();
+		
+		String outputMessage;
+		
+		float firstNum = inputController.numericInputController();
+		float secondNum = inputController.numericInputController();
+		String operator = inputController.operatorInputController();
+		inputController.closeReader();
+		
+		float totals = (performCalculation(operator, firstNum, secondNum));
+	}
+	
+	private static float performCalculation(String operatorChosen, float firstNumber, float secondNumber)
+	{
+		Calculator calc = new Calculator();
+		switch(operatorChosen)
+		{
+			case "+":
+				return calc.add(firstNumber, secondNumber);
+			case "-":
+				return calc.subtract(firstNumber, secondNumber);	
+			case "*":
+				return calc.multiply(firstNumber, secondNumber);
+			case "/":
+				return calc.divide(firstNumber, secondNumber);
+			case "%":
+				return calc.remainder(firstNumber, secondNumber);
+			default:
+				System.out.println("Please Enter A Valid Operator - Error");	
+		}
+		
+		return 0;
+	}
+}

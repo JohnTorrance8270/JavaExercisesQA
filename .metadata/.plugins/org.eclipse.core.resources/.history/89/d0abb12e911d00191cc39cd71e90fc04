@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{	
+		InputController inputController;
+		inputController = new InputController();
+		
+		String outputMessage;
+		
+		float firstNum = inputController.numericInputController();
+		float secondNum = inputController.numericInputController();
+		inputController.closeReader();
+		
+		operatorControl();
+		
+		float total = Calculator.add(firstNum, secondNum);
+		
+		outputMessage = "The sum of " + firstNum + " & " + secondNum + " is: " + total;
+		print(outputMessage);
+		
+		Calculator calc = new Calculator();
+		
+		total = calc.subtract(firstNum, secondNum);
+		outputMessage = "The subtraction of " + firstNum + " & " + secondNum + " is: " + total;
+		print(outputMessage);
+		
+		total = calc.multiply(firstNum, secondNum);
+		outputMessage = "The multiplication of " + firstNum + " & " + secondNum + " is: " + total;
+		print(outputMessage);
+		
+		total = calc.divide(firstNum, secondNum);
+		outputMessage = "The division of " + firstNum + " & " + secondNum + " is: " + total;
+		print(outputMessage);
+		
+		total = calc.remainder(firstNum, secondNum);
+		outputMessage = "The remainder of " + firstNum + " & " + secondNum + " is: " + total;
+		print(outputMessage);
+	}
+	
+	private float operatorControl(String operatorChosen, float firstNumber, float secondNumber)
+	{
+		Calculator calc = new Calculator();
+		switch(operatorChosen)
+		{
+			case "+":
+				return calc.add(firstNumber, secondNumber);
+			case "-":
+				return calc.subtract(firstNumber, secondNumber);	
+			case "*":
+				return calc.multiply(firstNumber, secondNumber);
+			case "/":
+				return calc.divide(firstNumber, secondNumber);
+			case "%":
+				return calc.remainder(firstNumber, secondNumber);
+			default:
+				print("Please Enter A Valid Operator - Error");	
+		}
+		
+		return 0;
+	}
+	
+	private static void print(String message)
+	{
+		System.out.println(message);
+	}
+}

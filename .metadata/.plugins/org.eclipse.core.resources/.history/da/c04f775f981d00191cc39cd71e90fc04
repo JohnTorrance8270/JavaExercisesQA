@@ -1,0 +1,9 @@
+
+public class SimpleCalculator 
+{
+	SimpleCalculator()
+	{
+		InputController inputController = new InputController();
+		Calculator calc = new Calculator();
+	}
+}

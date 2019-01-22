@@ -1,0 +1,93 @@
+import java.util.Scanner;
+
+public class InputController 
+{
+	Scanner input;
+	
+	InputController(){input  = new Scanner(System.in);}
+		
+	public float numericInputController()
+	{
+		print("Please Enter A Number: ");
+		float numberEntered = 0;
+		
+		//anything input?
+		if(input.hasNext())
+		{
+			if(input.hasNextInt())
+			{
+				numberEntered = input.nextInt();
+			}
+			else if (input.hasNextFloat())
+			{
+				numberEntered = input.nextFloat();
+			}
+			else
+			{
+				print("Please Enter A Number Only, Try Again");
+				return numericInputController();
+			}
+		}
+		
+		print("The Number Entered was: " + numberEntered);
+	
+		return numberEntered;
+	}
+	
+	public String operatorInputController()
+	{
+		print("Please Enter An Operator Such As * / + - %: ");
+		String operatorEntered = "";
+		
+		//anything input?
+		if(input.hasNext())
+		{
+			operatorEntered = input.next();
+			if(operatorEntered.equals("+") || operatorEntered.equals("/") || operatorEntered.equals("*") || operatorEntered.equals("-") || operatorEntered.equals("%"))
+			{
+				print("The Operator Entered was: " + operatorEntered);
+				return operatorEntered;
+			}
+			else 
+			{
+				print("Please Enter An Operator Only, Try Again");
+				return operatorInputController();
+			}
+		}
+		
+		return null;
+	}
+	
+	public boolean confirmChoiceController()
+	{
+		boolean userChoice = false;
+		String userOptionEntered = "";
+		
+		print("To Use Again Press Y And Enter, All Other Inputs Will Exit: ");
+		//anything input?
+		if(input.hasNext())
+		{
+			if(input.next().equals("Y"))
+			{
+				userChoice = true;
+			}
+		}
+		
+		return userChoice;
+	}
+	
+	private static void print(String message)
+	{
+		System.out.println(message);
+	}
+	
+	private static void print(char message)
+	{
+		System.out.println(message);
+	}
+	
+	public void closeReader()
+	{
+		input.close();
+	}
+}

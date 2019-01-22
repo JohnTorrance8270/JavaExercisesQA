@@ -1,0 +1,21 @@
+
+public class SimpleCalculator 
+{
+	InputController inputController
+	SimpleCalculator()
+	{
+		 = new InputController();
+		Calculator calc = new Calculator();
+	}
+	
+	public void runSimpleCalc()
+	{
+		float firstNum = inputController.numericInputController();
+		float secondNum = inputController.numericInputController();
+		String operator = inputController.operatorInputController();
+		inputController.closeReader();
+		
+		float total = (calc.performSimpleCalculation(operator, firstNum, secondNum));
+		System.out.println("The Answer is: " + total);
+	}
+}

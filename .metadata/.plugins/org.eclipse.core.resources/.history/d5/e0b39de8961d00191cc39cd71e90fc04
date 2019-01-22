@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{	
+		InputController inputController;
+		inputController = new InputController();
+		
+		String outputMessage;
+		
+		float firstNum = inputController.numericInputController();
+		float secondNum = inputController.numericInputController();
+		String operator = inputController.operatorInputController();
+		inputController.closeReader();
+		
+		float totals = (operatorControl("+", firstNum, secondNum));
+		
+		outputMessage = "The result of " + firstNum + " " + operator + " " + secondNum + " is: " + totals;
+		print(outputMessage);
+		
+		float total = Calculator.add(firstNum, secondNum);
+		
+		outputMessage = "The sum of " + firstNum + " & " + secondNum + " is: " + total;
+		print(outputMessage);
+		
+		Calculator calc = new Calculator();
+		
+		total = calc.subtract(firstNum, secondNum);
+		outputMessage = "The subtraction of " + firstNum + " & " + secondNum + " is: " + total;
+		print(outputMessage);
+		
+		total = calc.multiply(firstNum, secondNum);
+		outputMessage = "The multiplication of " + firstNum + " & " + secondNum + " is: " + total;
+		print(outputMessage);
+		
+		total = calc.divide(firstNum, secondNum);
+		outputMessage = "The division of " + firstNum + " & " + secondNum + " is: " + total;
+		print(outputMessage);
+		
+		total = calc.remainder(firstNum, secondNum);
+		outputMessage = "The remainder of " + firstNum + " & " + secondNum + " is: " + total;
+		print(outputMessage);
+	}
+	
+	private static void print(String message)
+	{
+		System.out.println(message);
+	}
+}

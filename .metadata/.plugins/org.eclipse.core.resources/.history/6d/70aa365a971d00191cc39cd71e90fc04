@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{	
+		InputController inputController;
+		inputController = new InputController();
+		
+		String outputMessage;
+		
+		float firstNum = inputController.numericInputController();
+		float secondNum = inputController.numericInputController();
+		String operator = inputController.operatorInputController();
+		inputController.closeReader();
+		
+		float totals = (operatorControl("+", firstNum, secondNum));
+	}
+}
