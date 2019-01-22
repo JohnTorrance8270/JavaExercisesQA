@@ -1,0 +1,45 @@
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		//String outputMessage = "Hello World!";
+		//printStringMessage(outputMessage);
+		
+		//System.out.println(outputMessage());
+		
+		boolean shouldAdd = true;
+		int total = addOrMultiply(1,2, shouldAdd);
+		System.out.println(total);
+	}
+	
+	private static void printStringMessage(String message)
+	{
+		System.out.println(message);
+	}
+	
+	private static String outputMessage()
+	{
+		return "Hello World!";
+	}
+	
+	private static int addOrMultiply(int firstNumber, int secondNumber, boolean add)
+	{
+		if(firstNumber == 0)
+		{
+			return secondNumber;
+		}
+		else if (secondNumber == 0)
+		{
+			return firstNumber;
+		}
+		else if(add)
+		{
+			return firstNumber + secondNumber;
+		}
+		else
+		{
+			return firstNumber * secondNumber;
+		}
+	}
+}
