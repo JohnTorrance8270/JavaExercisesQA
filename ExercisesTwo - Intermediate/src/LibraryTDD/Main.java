@@ -6,6 +6,15 @@ public class Main
 	{
 		Library lib = new Library();
 		//lib.run();
+		
+		
+		String[][] a = new String[2][];
+		a[0] = new String[2];
+		a[1] = new String[1];
+		
+		a[0][1] = "Word";
+		
+		
 		int days = 6;
 		int months = 0;
 		
